@@ -1238,7 +1238,11 @@ public class VirtualLayoutManager extends ExposeLinearLayoutManagerEx implements
 
         if (!layoutState.hasScrapList()) {
             // can not find in scrapList
-            addView(view, index);
+            try {
+                addView(view, index);
+            }catch (Exception e){
+
+            }
         } else {
             addDisappearingView(view, index);
         }
